@@ -1,0 +1,47 @@
+@import "../../styles/constants";
+
+.clients {
+	margin-bottom: 104px;
+	    text-align: left;
+}
+
+.clients h3 {
+	    margin-top: 8px;
+}
+
+.clients__list {
+	display: flex;
+}
+
+.clients__item {
+border: 1px solid $color-grey300; 
+border-radius: 8px;
+//width: 210px;
+//height: 128px;
+padding:15px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right:28px;
+}
+
+
+@media (max-width: 1216px) {
+	.clients {
+	padding-left: 20px;
+}
+
+}
+
+
+
+ 
+
+@media (max-width: 768px) {
+
+	.clients { 
+    margin-bottom: 64px;
+		}
+
+
+}

@@ -1,0 +1,45 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.pagination a {
+	padding: 0px;
+	margin-top:0px;
+	width: 50%;
+	padding: 0px 37px;
+}
+
+
+@media (min-width: 769px) {
+	.pagination {
+		    margin-bottom: 106px;
+		    margin-top:74px;
+	}
+}
+
+@media (max-width: 768px) {
+	.pagination {
+	 margin-top:40px;
+
+	 a {
+	 	    font-size: 0px;
+	 	    padding: 0px;
+	 }
+	}
+
+	.pagination .btn {
+		font-size: 0px;
+	}
+
+	.pagination .btn::before {
+  color: white;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #B1B0B0;
+    border-radius: 8px;
+	}
+}
