@@ -16,10 +16,11 @@ const ProjectListItem = ({ project, index }: any) => {
 		(item: any) => item.attributes.locale === router.locale
 	);
 
-	const { Name, Location, Area, Description } =
+
+	const { Name, Location, Area, Description } = 
 		router.locale === "uk"
 			? project.attributes
-			: projectDataLocalization.attributes;
+			:  projectDataLocalization?.attributes;
 
 	//const { Gallery } = project.attributes.gallery.data
 	return (
