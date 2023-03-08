@@ -56,10 +56,9 @@ const Gallery = ({ gallery }: any) => {
 										{" "}
 									</span>
 								</div>
-
 								<Image
 									className={style.projectListItem__image}
-									src={image.attributes.url}
+									src={image.attributes.formats.medium.url}
 									alt=""
 									width={468}
 									height={354}

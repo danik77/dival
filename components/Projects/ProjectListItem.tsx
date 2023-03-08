@@ -23,6 +23,8 @@ const ProjectListItem = ({ project, index }: any) => {
 			:  projectDataLocalization?.attributes;
 
 	//const { Gallery } = project.attributes.gallery.data
+
+	console.log(project.attributes.Gallery)
 	return (
 		<div
 			key={projectId}
@@ -41,7 +43,7 @@ const ProjectListItem = ({ project, index }: any) => {
 
 						<Image
 							className={style.projectListItem__image}
-							src={project.attributes.Gallery.data[0].attributes.url}
+							src={project.attributes.Gallery.data[0].attributes.formats.medium.url}
 							alt=""
 							width={468}
 							height={354}

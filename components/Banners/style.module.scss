@@ -138,9 +138,14 @@ margin-bottom: 104px;
 }
 
 .bannerMiddle__imageWrapper {
-		width: calc(100% / 3);
+		width: calc(100% / 2);
 		position:relative;
 }
+
+.bannerMiddle__imageWrapper:last-child {
+	display: none;
+}
+
 
  
      
