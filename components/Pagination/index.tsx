@@ -35,12 +35,12 @@ const Pagination = ({ currentProjectId }: any) => {
 		<div className={style.pagination}>
 			{prev && (
 				<Link href={`/projects/${prev}`}>
-					<a className="btn btn-transparent arrow-left" style={{textAlign: "right"}}>{t("prev-project")}</a>
+					<a className="pagin btn btn-transparent arrow-left" style={{textAlign: "right"}}>{t("prev-project")}</a>
 				</Link>
 			)}
 			{next && (
 				<Link href={`/projects/${next}`}>
-					<a className="btn btn-transparent arrow-right" style={{textAlign: "left"}}>{t("next-project")}</a>
+					<a className="pagin btn btn-transparent arrow-right" style={{textAlign: "left"}}>{t("next-project")}</a>
 				</Link>
 			)}
 		</div>

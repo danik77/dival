@@ -1,6 +1,9 @@
 
 
 
+.image-gallery-thumbnails-wrapper {
+  margin-top: -3px;
+}
 
 .image-gallery {
 
@@ -364,5 +367,43 @@ content: url('../public/images/arrow_next.svg');
 .breadcrumbs a {
   font-size: 14px;
 }
+
+}
+
+
+
+
+@media (max-width: 767px) {
+  .pagin.arrow-left {
+      color: white;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #B1B0B0;
+    border-radius: 8px;
+    padding-left: 0px;
+  }
+
+  .pagin.arrow-left::before {
+        margin-right: 0px;
+  }
+
+  .pagin.arrow-right {
+      color: white;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #B1B0B0;
+    border-radius: 8px;
+    padding-right: 0px;
+  }
+
+  .pagin.arrow-right::after {
+       margin-left:  0px;
+  }
 
 }
