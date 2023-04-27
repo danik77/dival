@@ -22,10 +22,10 @@ const ProjectPage = ({ project }: any) => {
 		(item: any) => item.attributes.locale === router.locale
 	);
 
-	const { Name, Location, Area, Description } =
+	const { Name, Location, Area, Description, year } =
 		router.locale === "uk"
 			? project.attributes
-			: projectDataLocalization.attributes;///ПЕРЕРОБОИТИ ПОЛЬЩЕ ! 
+			: projectDataLocalization.attributes; ///ПЕРЕРОБОИТИ ПОЛЬЩЕ !
 	const gallery = project.attributes.Gallery.data;
 
 	return (
@@ -42,25 +42,27 @@ const ProjectPage = ({ project }: any) => {
 					</Link>
 				</div>
 
-<div className="narrow">
-				<h3 className="textAlignLeft">
-					<a href={`/projects/${projectId}`}>{Name}</a>
-				</h3>
-				{/*  ! */}
-				<div className={style.projectData}>
-
-				<div className={style.projectData__stats}>
-					<div className={style.projectData__area}>
-						<p>{t("space")}:</p> <h4>{Area}</h4>
+				<div className="narrow">
+					<h3 className="textAlignLeft">
+						<a href={`/projects/${projectId}`}>{Name}</a>
+					</h3>
+					{/*  ! */}
+					<div className={style.projectData}>
+						<div className={style.projectData__stats}>
+							<div>
+								<p>{t("location")}</p> <h4>{Location}</h4>
+							</div>
+							<div>
+								<p>{t("year")}</p> <h4>{year}</h4>
+							</div>
+							<div className={style.projectData__area}>
+								<p>{t("space")}</p> <h4>{Area}</h4>
+							</div>
+						</div>
+						{/* <div className={style.projectData__desc}>{Description}</div> */}
 					</div>
-					<div>
-						<p>{t("location")}:</p> <h4>{Location}</h4>
-					</div>
-					</div>
-					{/* <div className={style.projectData__desc}>{Description}</div> */}
-				</div>
-				{gallery && <Gallery gallery={gallery} />}
-				<Pagination currentProjectId={projectId}/>
+					{gallery && <Gallery gallery={gallery} />}
+					<Pagination currentProjectId={projectId} />
 				</div>
 			</div>
 		</div>

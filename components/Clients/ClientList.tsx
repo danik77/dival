@@ -13,17 +13,27 @@ const ClientList = ({ clients }: any) => {
 
   const settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 768,
         settings: {
+              arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+        {
+        breakpoint: 1024,
+        settings: {
+              arrows: false,
+          slidesToShow: 5,
+          slidesToScroll: 3,
           infinite: true,
         },
       },

@@ -128,9 +128,10 @@ overflow: hidden;
     min-width:314px;
 }
 
-.projectData__area {
-    margin-right: 24px;
+.projectData__stats > div:not(:last-child) {
+    margin-right: 24px
 }
+ 
 
 .projectData h4 {
     text-align: left;

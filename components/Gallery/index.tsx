@@ -23,8 +23,8 @@ const Gallery = ({ gallery }: any) => {
 
 		gallery.map((image) => {
 			carouselImagesArr.push({
-				original: image.attributes.url,
-				thumbnail: image.attributes.formats.thumbnail.url,
+				original: image.attributes?.url,
+				thumbnail: image.attributes.formats.thumbnail?.url,
 			});
 		});
 
@@ -58,7 +58,7 @@ const Gallery = ({ gallery }: any) => {
 								</div>
 								<Image
 									className={style.projectListItem__image}
-									src={image.attributes.formats.medium.url}
+									src={image.attributes.formats.medium?.url || image.attributes.url}
 									alt=""
 									width={468}
 									height={354}

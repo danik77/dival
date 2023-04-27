@@ -18,21 +18,21 @@ const Project: NextPage = ({ project, context }: any) => {
   // ПЕРЕРОБИТИ !!! СТЯГУВАТИ ІТЛЬКИ ТО ЩО ТРЕБА !! в пропсах !
   //const projectData = i18n.language === "uk" ? project.data : project.data.attributes.localizations.data[0]
 
- // const { metaTitle, metaDesc, keywords } = project.data.attributes.seoProject;
+  // const { metaTitle, metaDesc, keywords } = project.data.attributes.seoProject;
 
   return (
     <>
-     {/* <Seo metaTitle={metaTitle} metaDesc={metaDesc} keywords={keywords} />*/}
+      {/* <Seo metaTitle={metaTitle} metaDesc={metaDesc} keywords={keywords} />*/}
       <div className="fullwidth page">
         <ProjectPage project={project.data} />
         <div className="container"> </div>
       </div>
-        <div className="container"><BannerBottom /></div>
+      <div className="container">
+        <BannerBottom />
+      </div>
     </>
   );
 };
-
- 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { project_id } = context.query;
@@ -49,6 +49,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       ...(await serverSideTranslations(context.locale || "", ["common"])),
     },
   };
-}; 
+};
 
 export default Project;

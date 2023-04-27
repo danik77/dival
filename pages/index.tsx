@@ -32,6 +32,9 @@ const Home: NextPage = ({ about, clients, projects, homepage }: any) => {
 
  const {metaTitle, metaDesc, keywords} = context.seo.data.attributes.seoHomepage;
 
+
+const projectsList = projects.data.slice(0, 4)
+
   return (
 
     <>
@@ -57,7 +60,7 @@ const Home: NextPage = ({ about, clients, projects, homepage }: any) => {
               </a>
             </Link>
           </div>
-          <ProjectList projects={projects.data} />
+          <ProjectList projects={projectsList} />
 
           <ProjectsAllButton />
           </div>
@@ -85,7 +88,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const clients = await resClients.json();
 
   const resProjects = await fetch(
-    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?populate=*&sort[0]=createdAt"
+    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?populate=*&sort[0]=year%3Adesc"
   ); //change
   const projects = await resProjects.json();
  
