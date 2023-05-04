@@ -340,6 +340,10 @@ content: url('../public/images/arrow_next.svg');
     right: 0px !important;
 }
 
+.slick-list {
+       padding-left: 10px !important;
+    }
+
 
 }
 
@@ -405,5 +409,8 @@ content: url('../public/images/arrow_next.svg');
   .pagin.arrow-right::after {
        margin-left:  0px;
   }
+
+
+     
 
 }

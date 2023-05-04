@@ -1,3 +1,4 @@
+import {useRef} from 'react'
 import ClientListItem from "./ClientListItem";
 import { useTranslation } from "next-i18next";
 
@@ -11,9 +12,10 @@ import style from "./style.module.scss";
 const ClientList = ({ clients }: any) => {
   const { t } = useTranslation("common");
 
+const slider = useRef(null)
   const settings = {
     dots: false,
-    arrows: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
@@ -44,13 +46,21 @@ const ClientList = ({ clients }: any) => {
     <div className={style.clients}>
       <h3>{t("our-clients")}</h3>
 
-      <div>
-        <Slider {...settings}>
+      <div style={{position: "relative"}}>
+    {/*
+        <a  onClick={() => {
+          slider?.current?.slickPrev()
+          console.log(slider)
+        }} className="pagin btn btn-transparent arrow-left" style={{position: "absolute", left: "-40px"}}></a>
+           <a  onClick={() => slider?.current?.slickNext()} className="pagin btn btn-transparent arrow-right" style={{position: "absolute", right: "-35px"}}></a>
+        */}
+        <Slider {...settings} ref={slider}>
           {clients &&
             clients.data.map((client) => (
               <ClientListItem key={client.id} client={client} />
             ))}
         </Slider>
+        
       </div>
     </div>
   );

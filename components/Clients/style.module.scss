@@ -27,8 +27,8 @@ margin-right:28px;
 
 
 @media (max-width: 1216px) {
-	.clients {
-	padding-left: 20px;
+	.clients > h3 {
+	text-align: center;
 }
 
 }
@@ -41,6 +41,7 @@ margin-right:28px;
 
 	.clients { 
     margin-bottom: 64px;
+
 		}
 
 
