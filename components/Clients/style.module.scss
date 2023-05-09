@@ -22,13 +22,17 @@ padding:15px;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-right:28px;
+margin-right:14px;
 }
 
 
 @media (max-width: 1216px) {
 	.clients > h3 {
 	text-align: center;
+}
+
+.clients a {
+	display: none;
 }
 
 }

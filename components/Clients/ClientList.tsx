@@ -19,7 +19,7 @@ const slider = useRef(null)
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 768,
@@ -35,7 +35,7 @@ const slider = useRef(null)
         settings: {
               arrows: false,
           slidesToShow: 5,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
         },
       },
@@ -47,13 +47,13 @@ const slider = useRef(null)
       <h3>{t("our-clients")}</h3>
 
       <div style={{position: "relative"}}>
-    {/*
+    
         <a  onClick={() => {
           slider?.current?.slickPrev()
           console.log(slider)
         }} className="pagin btn btn-transparent arrow-left" style={{position: "absolute", left: "-40px"}}></a>
-           <a  onClick={() => slider?.current?.slickNext()} className="pagin btn btn-transparent arrow-right" style={{position: "absolute", right: "-35px"}}></a>
-        */}
+           <a  onClick={() => slider?.current?.slickNext()} className="pagin btn btn-transparent arrow-right" style={{position: "absolute", right: "-50px"}}></a>
+        
         <Slider {...settings} ref={slider}>
           {clients &&
             clients.data.map((client) => (
