@@ -12,7 +12,7 @@ const Logo = () => {
 						src="/images/logo_dival.svg"
 						alt="Dival Logo"
 						width={128}
-						height={28}
+						height={40}
 					/>
 				</a>
 			</Link>

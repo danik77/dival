@@ -2,11 +2,11 @@
 
 .clients {
 	margin-bottom: 104px;
-	    text-align: left;
+	text-align: left;
 }
 
 .clients h3 {
-	    margin-top: 8px;
+	margin-top: 8px;
 }
 
 .clients__list {
@@ -14,39 +14,39 @@
 }
 
 .clients__item {
-border: 1px solid $color-grey300; 
-border-radius: 8px;
-//width: 210px;
-//height: 128px;
-padding:15px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-right:14px;
+	border: 1px solid $color-grey300;
+	border-radius: 8px;
+	//width: 210px;
+	//height: 128px;
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 14px;
 }
 
+@media (min-width: 1280px) and (max-width: 1290px) {
+	.clients a:first-child {
+		left: -26px !important;
+	}
 
-@media (max-width: 1216px) {
+	.clients a:nth-child(2) {
+		right: -35px !important;
+	}
+}
+
+@media (max-width: 1279px) {
 	.clients > h3 {
-	text-align: center;
+		text-align: center;
+	}
+
+	.clients a {
+		display: none !important;
+	}
 }
-
-.clients a {
-	display: none;
-}
-
-}
-
-
-
- 
 
 @media (max-width: 768px) {
-
-	.clients { 
-    margin-bottom: 64px;
-
-		}
-
-
+	.clients {
+		margin-bottom: 64px;
+	}
 }
