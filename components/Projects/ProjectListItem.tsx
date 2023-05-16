@@ -43,7 +43,7 @@ const ProjectListItem = ({ project, index }: any) => {
 
 						<Image
 							className={style.projectListItem__image}
-							src={project?.attributes?.Gallery?.data[0]?.attributes?.formats?.medium?.url}
+							src={project?.attributes?.Gallery?.data?.[0]?.attributes?.formats?.medium?.url}
 							alt=""
 							width={468}
 							height={354}

@@ -16,7 +16,6 @@ function MyApp({
   pageProps,
   contacts,
   categories,
-  projects,
   homepage,
   seo,
 }: AppProps) {
@@ -28,7 +27,7 @@ function MyApp({
 
       {/*body*/}
 
-      <DivalContext.Provider value={{ categories, projects, contacts, seo, homepage }}>
+      <DivalContext.Provider value={{ categories, contacts, seo, homepage }}>
         <Header contacts={contacts} /> 
         <Component {...pageProps} />
        <Footer contacts={contacts} homepage={homepage} />  

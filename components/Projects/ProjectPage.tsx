@@ -62,7 +62,7 @@ const ProjectPage = ({ project }: any) => {
 						{/* <div className={style.projectData__desc}>{Description}</div> */}
 					</div>
 					{gallery && <Gallery gallery={gallery} />}
-					<Pagination currentProjectId={projectId} />
+					{/* <Pagination currentProjectId={projectId} /> */}
 				</div>
 			</div>
 		</div>
