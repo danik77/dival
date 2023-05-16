@@ -30,7 +30,7 @@ const Home: NextPage = ({ about, clients, projects, homepage }: any) => {
 
  const context = useContext(DivalContext)
 
- const {metaTitle, metaDesc, keywords} = context.seo.data.attributes.seoHomepage;
+ //const {metaTitle, metaDesc, keywords} = context.seo.data.attributes.seoHomepage;
 
 
 const projectsList = projects.data.slice(0, 4)
@@ -38,7 +38,7 @@ const projectsList = projects.data.slice(0, 4)
   return (
 
     <>
-     <Seo metaTitle={metaTitle} metaDesc={metaDesc} keywords={keywords} />
+    {/* <Seo metaTitle={metaTitle} metaDesc={metaDesc} keywords={keywords} />*/}
 
     <div className={`${styles.container} page`}>
       <main className={styles.main}>
@@ -71,7 +71,9 @@ const projectsList = projects.data.slice(0, 4)
     </div>
 
 
-      <div className="container"><BannerBottom /></div>
+      <div className="container">
+    {/* <BannerBottom />*/}
+    </div>
     </>
   );
 };

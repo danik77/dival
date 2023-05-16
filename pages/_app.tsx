@@ -29,9 +29,9 @@ function MyApp({
       {/*body*/}
 
       <DivalContext.Provider value={{ categories, projects, contacts, seo, homepage }}>
-        <Header contacts={contacts} />
+       {/* <Header contacts={contacts} />*/}
         <Component {...pageProps} />
-        <Footer contacts={contacts} homepage={homepage} />
+        {/* <Footer contacts={contacts} homepage={homepage} /> */}
         <ScrollButton />
       </DivalContext.Provider>
     </>
@@ -41,16 +41,18 @@ function MyApp({
 MyApp.getInitialProps = async () => {
   //  const pageProps = await App.getInitialProps(contex);
 
+/*
   const resCategories = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/categories?populate=deep"
   ); //change
   const categories = await resCategories.json();
+  */
 
   const res = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/contact?populate=*"
   );
   const contacts = await res.json();
-
+/*
   const resProjects = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND +
       "/projects?populate=*&sort[0]=createdAt"
@@ -78,13 +80,13 @@ MyApp.getInitialProps = async () => {
     process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/seo?populate=*"
   ); //change
   const seo = await resSeo.json();
-
+*/
   return {
     contacts,
-    categories: categories.data,
-    projects: projects.data,
-    homepage,
-    seo,
+   // categories: categories.data,
+   // projects: projects.data,
+   // homepage,
+   // seo,
   };
 };
 
