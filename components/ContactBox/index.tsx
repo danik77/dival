@@ -9,11 +9,11 @@ const ContactBox = ({ contacts }: any) => {
 	const router = useRouter();
  
 	const { Email, Phone, Address, Worktime } =
-		router.locale === "uk"
-			? contacts.data.attributes
-			: contacts.data.attributes.localizations.data.find(
+		(router.locale === "uk"
+			? contacts?.data?.attributes
+			: contacts?.data?.attributes?.localizations?.data?.find(
 					(item: any) => item.attributes.locale === router.locale
-			  ).attributes;
+			  )?.attributes) || {}
 
 	return (
 		<div className={style.contactBox}>

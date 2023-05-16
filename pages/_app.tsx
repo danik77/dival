@@ -11,9 +11,6 @@ import DivalContext from "../context";
 
 import "react-image-gallery/styles/scss/image-gallery.scss";
 
-
-  console.log("!!1")
-
 function MyApp({
   Component,
   pageProps,
@@ -82,10 +79,6 @@ MyApp.getInitialProps = async () => {
   ); //change
   const seo = await resSeo.json();
 
-  console.log("!!1")
- console.log(resCategories)
-
-
   return {
     contacts,
     categories: categories.data,
@@ -95,6 +88,17 @@ MyApp.getInitialProps = async () => {
   };
 };
 
- 
+/*
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const res = await fetch(process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/contacts")
+  const about = await res.json()
+
+  return {
+    props: {
+      contacts,
+    },
+  }
+}
+*/
 
 export default appWithTranslation(MyApp);
