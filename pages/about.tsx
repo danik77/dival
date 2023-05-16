@@ -43,7 +43,7 @@ const baseBanner = about[router.locale].data.attributes.BannerAbout;
        <BannerAbout banner={baseBanner}/>
  
 
-   <div className="container"><BannerBottom  theme="mobileWhite" /></div>
+   <div className="container">{/* <BannerBottom  theme="mobileWhite" /> */}</div>
 		</div>
     </>
 	)

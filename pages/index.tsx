@@ -28,7 +28,7 @@ const Home: NextPage = ({ about, clients, projects, homepage }: any) => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("common");
 
- const context = useContext(DivalContext)
+ //const context = useContext(DivalContext)
 
  //const {metaTitle, metaDesc, keywords} = context.seo.data.attributes.seoHomepage;
 

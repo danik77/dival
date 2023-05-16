@@ -17,13 +17,15 @@ const Projects: NextPage = ({ projects, categories }: any) => {
         <div className="container"></div>
       </div>
       <div className="container">
-        <BannerBottom />
+       {/* <BannerBottom />*/}
       </div>
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+
+  
   const resProjects = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND +
       "/projects?populate=*&sort[0]=year%3Adesc"
@@ -34,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
     process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/categories?populate=*"
   ); //change
   const categories = await resCategories.json();
-
+ 
   return {
     props: {
       projects,
