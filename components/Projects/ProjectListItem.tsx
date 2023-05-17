@@ -24,7 +24,7 @@ const ProjectListItem = ({ project, index }: any) => {
 
 	//const { Gallery } = project.attributes.gallery.data
 
-	console.log(project.attributes.Gallery)
+	console.log(project.attributes)
 	return (
 		<div
 			key={projectId}
@@ -43,7 +43,7 @@ const ProjectListItem = ({ project, index }: any) => {
 
 						<Image
 							className={style.projectListItem__image}
-							src={project?.attributes?.Gallery?.data?.[0]?.attributes?.formats?.medium?.url}
+							src={project?.attributes?.Image?.data?.attributes?.formats?.medium?.url}
 							alt=""
 							width={468}
 							height={354}

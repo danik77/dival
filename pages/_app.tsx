@@ -82,7 +82,7 @@ MyApp.getInitialProps = async () => {
  
   return {
     contacts,
-    categories: categories.data,
+    categories: categories,
    // projects: projects.data,
      homepage,
      seo,

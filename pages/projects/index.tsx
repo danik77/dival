@@ -17,7 +17,6 @@ const Projects: NextPage = ({ projects, categories }: any) => {
  const context = useContext(DivalContext)
 
 
-
   return (
     <>
       <div className="page">
@@ -25,7 +24,7 @@ const Projects: NextPage = ({ projects, categories }: any) => {
         <div className="container"></div>
       </div>
       <div className="container">
-       {/* <BannerBottom />*/}
+      <BannerBottom /> 
       </div>
     </>
   );
@@ -36,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   
   const resProjects = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND +
-      "/projects?sort[0]=year%3Adesc"
+      "/projects?sort[0]=year%3Adesc&populate[localizations]populate=*&populate[Image]populate=*"
   ); //change
   const projects = await resProjects.json();
 

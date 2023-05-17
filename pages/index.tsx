@@ -93,7 +93,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const clients = await resClients.json();
 
   const resProjects = await fetch(
-    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?populate=*&sort[0]=year%3Adesc&pagination[start]=0&pagination[limit]=8"
+    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?sort[0]=year%3Adesc&pagination[start]=0&pagination[limit]=8&populate[localizations]populate=*&populate[Image]populate=*"
   ); //change
   const projects = await resProjects.json();
 
