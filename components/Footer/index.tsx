@@ -4,7 +4,7 @@ import BannerBottom from "../Banners/BannerBottom";
 import ReturnButton from "../Map/ReturnButton";
 import style from "./style.module.scss";
 
-const Footer = ({ contacts, homepage }: any) => {
+const Footer = ({ contacts }: any) => {
 	const coords = {
 		lat: contacts.data.attributes.GoogleMapsLatitude,
 		lng: contacts.data.attributes.GoogleMapsLongitude,

@@ -30,7 +30,7 @@ function MyApp({
       <DivalContext.Provider value={{ categories, contacts, seo, homepage }}>
         <Header contacts={contacts} /> 
         <Component {...pageProps} />
-       <Footer contacts={contacts} homepage={homepage} />  
+       <Footer contacts={contacts} />  
         <ScrollButton />
       </DivalContext.Provider>
     </>

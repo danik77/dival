@@ -24,11 +24,11 @@ import BannerBottom from "../components/Banners/BannerBottom";
 import Seo from "../components/Seo"
 import DivalContext from '../context'
 
-const Home: NextPage = ({ about, clients, projects, homepage }: any) => {
+const Home: NextPage = ({ about, clients, projects }: any) => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("common");
 
- //const context = useContext(DivalContext)
+ const context = useContext(DivalContext)
 
  //const {metaTitle, metaDesc, keywords} = context.seo.data.attributes.seoHomepage;
 
@@ -46,10 +46,10 @@ const projectsList = projects.data.slice(0, 4)
 
       {/* переробити */}
 
-        <BannerTop homepage={homepage} />
+        <BannerTop homepage={context.homepage} />
         <div className="container">
           <ClientList clients={clients} />
-          <BannerMiddle homepage={homepage} />
+          <BannerMiddle homepage={context.homepage} />
 
           <div className="narrow">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -72,7 +72,7 @@ const projectsList = projects.data.slice(0, 4)
 
 
       <div className="container">
-    {/* <BannerBottom />*/}
+<BannerBottom />
     </div>
     </>
   );
@@ -94,7 +94,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   ); //change
   const projects = await resProjects.json();
  
-
+/*
    const resHomepageEn = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/homepage?populate=deep&locale=en"
   ); //change
@@ -109,14 +109,14 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
     en: homepageEn,
     uk: homepageUk
   }
- 
+ */
 
   return {
     props: {
       about,
       clients,
       projects,
-      homepage,
+     // homepage,
       ...(await serverSideTranslations(locale || "", ["common"])),
     },
   };
