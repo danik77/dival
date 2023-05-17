@@ -41,6 +41,7 @@ const ProjectListItem = ({ project, index }: any) => {
 							</span>
 						</div>
 
+						{project?.attributes?.Image?.data?.attributes?.formats?.medium?.url &&
 						<Image
 							className={style.projectListItem__image}
 							src={project?.attributes?.Image?.data?.attributes?.formats?.medium?.url}
@@ -49,6 +50,16 @@ const ProjectListItem = ({ project, index }: any) => {
 							height={354}
 							objectFit="cover"
 						/>
+					}
+					{!project?.attributes?.Image?.data?.attributes?.formats?.medium?.url &&
+						<div style={{width: "468px", height: "354px", display: "flex", alignItems: "center", justifyContent: "center",     background: "#f3f3f3"}}>
+						<Image
+						src="/images/logo_dival.svg"
+						alt="Dival Logo"
+						width={128}
+						height={40}
+					/></div>
+					}
 					</div>
 				</a>
 			</Link>
