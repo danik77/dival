@@ -93,9 +93,13 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const clients = await resClients.json();
 
   const resProjects = await fetch(
-    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?populate=*&sort[0]=year%3Adesc"
+    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/projects?populate=*&sort[0]=year%3Adesc&pagination[start]=0&pagination[limit]=8"
   ); //change
   const projects = await resProjects.json();
+
+  /*
+  https://dival-backend.herokuapp.com/api/projects?populate=*&pagination[start]=0&pagination[limit]=8
+  */
  
 /*
    const resHomepageEn = await fetch(
