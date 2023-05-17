@@ -24,7 +24,7 @@ import BannerBottom from "../components/Banners/BannerBottom";
 import Seo from "../components/Seo"
 import DivalContext from '../context'
 
-const Home: NextPage = ({ about, clients, projects }: any) => {
+const Home: NextPage = ({ clients, projects }: any) => {
   const { i18n } = useTranslation();
   const { t } = useTranslation("common");
 
@@ -79,8 +79,11 @@ const projectsList = projects.data.slice(0, 4)
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+
+  /*
   const res = await fetch(process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/about");
   const about = await res.json();
+*/
 
   const resClients = await fetch(
    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/clients?populate=*"
@@ -113,7 +116,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
   return {
     props: {
-      about,
+      //about,
       clients,
       projects,
      // homepage,
