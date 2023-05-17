@@ -13,6 +13,8 @@ const ProjectBlock = ({ projects, categories }: any) => {
 
 	const [filteredProjects, setFilteredProjects] = useState(projects);
 
+	console.log(projects)
+
 	const filterByСategory = (categoryId) => {
 		if (!categoryId) {
 			setFilteredProjects(projects);

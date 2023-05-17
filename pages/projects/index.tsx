@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   
   const resProjects = await fetch(
     process.env.NEXT_PUBLIC_DIVAL_BACKEND +
-      "/projects?sort[0]=year%3Adesc&populate[localizations]populate=*&populate[Image]populate=*"
+      "/projects?sort[0]=year%3Adesc&populate[localizations]populate=*&populate[Image]populate=*&populate[category]populate=*"
   ); //change
   const projects = await resProjects.json();
 
