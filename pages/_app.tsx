@@ -42,7 +42,9 @@ MyApp.getInitialProps = async () => {
 
  
   const resCategories = await fetch(
-    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/categories?populate=deep"
+   //process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/categories?populate=deep"
+    process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/categories?populate[localizations]populate=*"
+    
   ); //change
   const categories = await resCategories.json();
  
