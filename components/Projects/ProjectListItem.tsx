@@ -42,7 +42,7 @@ const ProjectListItem = ({ project, index }: any) => {
 						</div>
 
 						{project?.attributes?.Image?.data?.attributes?.formats?.medium?.url &&
-							/*
+						
 						<Image
 							className={style.projectListItem__image}
 							src={project?.attributes?.Image?.data?.attributes?.formats?.medium?.url}
@@ -51,12 +51,12 @@ const ProjectListItem = ({ project, index }: any) => {
 							height={354}
 							objectFit="cover"
 						/>
-						*/
+							/*
 						<img className={style.projectListItem__image} src={project?.attributes?.Image?.data?.attributes?.formats?.medium?.url}
 							alt=""
 							width={468}
-							height={354} />
-					}
+							height={354} />*/}
+					
 					{!project?.attributes?.Image?.data?.attributes?.formats?.medium?.url &&
 						<div style={{width: "468px", height: "354px", display: "flex", alignItems: "center", justifyContent: "center",     background: "#f3f3f3"}}>
 						<Image

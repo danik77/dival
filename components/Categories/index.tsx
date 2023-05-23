@@ -32,9 +32,11 @@ const Categories = ({ categories, filterByСategory }: any) => {
 	const { t } = useTranslation("common");
 
 
-	const categoriesList = categories.data.filter(
+	const categoriesList = categories.data
+
+/*.filter(
 		(item) => item.attributes.projects.data.length
-	);
+	);*/
 
 	const handleClick = (categoryId) => {
 		if (categoryId === "all") {
