@@ -15,17 +15,17 @@ const BannerBottom = ({ homepage, theme }) => {
 console.log(context)
 
 
-	const base = context.homepage[router.locale].data.attributes.BannerBottom;
+	const base = context.homepage[router.locale]?.data?.attributes?.BannerBottom;
 
 	return (
 		<div className={style.bannerBottom}>
 			<div className={`${style.bannerBottom__left} ${theme && style[theme]}`}>
-				<h3 className={style.bannerBottom__title}>{base.bannerBottomText}</h3>
+				<h3 className={style.bannerBottom__title}>{base?.bannerBottomText}</h3>
 				<ContactButton />
 			</div>
 			<div className={style.bannerBottom__right}>
 				<Image
-					src={base.bannerBottomImage.data.attributes.url}
+					src={base?.bannerBottomImage?.data?.attributes?.url}
 					alt="Image"
 					layout="fill"
 					objectFit="cover"

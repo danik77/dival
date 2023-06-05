@@ -57,7 +57,7 @@ const ContactForm = (props: any) => {
 	const [countries, setCountries] = useState([]);
 	const [cities, setCities] = useState([]);
 
-	const categories = context.categories.data
+	const categories = context.categories.data;
 
 	useEffect(() => {
 		/*

@@ -10,23 +10,22 @@ import style from "./style.module.scss";
 
 const ProjectPage = ({ project }: any) => {
 	const router = useRouter();
-	const { t } = useTranslation("common");
-	//console.log(router.locale)
+	const { t } = useTranslation("common"); 
 
 	const projectId = project.id;
 
-	//переробити якщо кылька локалиыв
 	//const data = atrr.localizations.data.find(item => item.attributes.locale === router.locale)
 
 	const projectDataLocalization = project.attributes.localizations.data.find(
 		(item: any) => item.attributes.locale === router.locale
 	);
 
-	const { Name, Location, Area, Description, year } =
+	const { Name, Location, Area, Description, year, Author } =
 		router.locale === "uk"
 			? project.attributes
-			: projectDataLocalization.attributes; ///ПЕРЕРОБОИТИ ПОЛЬЩЕ !
+			: projectDataLocalization.attributes;  
 	const gallery = project.attributes.Gallery.data;
+
 
 	return (
 		<div className={style.projectPage}>
@@ -49,15 +48,26 @@ const ProjectPage = ({ project }: any) => {
 					{/*  ! */}
 					<div className={style.projectData}>
 						<div className={style.projectData__stats}>
-							<div>
-								<p>{t("location")}</p> <h4>{Location}</h4>
-							</div>
-							<div>
-								<p>{t("year")}</p> <h4>{year}</h4>
-							</div>
-							<div className={style.projectData__area}>
-								<p>{t("space")}</p> <h4>{Area}</h4>
-							</div>
+							{Location && (
+								<div>
+									<p>{t("location")}</p> <h4>{Location}</h4>
+								</div>
+							)}
+							{year && (
+								<div>
+									<p>{t("year")}</p> <h4>{year}</h4>
+								</div>
+							)}
+							{Area && (
+								<div className={style.projectData__area}>
+									<p>{t("space")}</p> <h4>{Area}</h4>
+								</div>
+							)}
+							{Author && (
+								<div className={style.projectData__author}>
+									<p>{t("author")}</p> <h4>{Author}</h4>
+								</div>
+							)}
 						</div>
 						{/* <div className={style.projectData__desc}>{Description}</div> */}
 					</div>

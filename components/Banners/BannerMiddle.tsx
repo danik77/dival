@@ -42,15 +42,19 @@ const BannerMiddle = ({homepage}) => {
 	const myRef = React.createRef()
 const router = useRouter();
 
-	const base = homepage[router.locale].data.attributes.BannerMiddle;
+	const base = homepage[router.locale]?.data?.attributes?.BannerMiddle;
 
 
 	return (
+
+		<>
+				{base && 
 		<div
 		ref={myRef}
 
 		className={style.bannerMiddle}
 		>
+
 			<div className={style.bannerMiddle__imageWrapper}>
 				<div className={style.bannerMiddle__text}>
 					<h5 className={style.bannerMiddle__title}>{base.bannerMiddleNumber1}{base.bannerMiddlePlus1 && "+"}</h5>
@@ -98,6 +102,7 @@ const router = useRouter();
 				</div>
 			</div>
 		</div>
+	}</>
 	);
 };
 

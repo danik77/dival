@@ -178,5 +178,11 @@
         grid-template-columns: 1fr;
         margin-top: 33px;
         margin-bottom: 48px;
+
+        &__stats {
+            flex-direction: column;
+        }
     }
+
+
 }
