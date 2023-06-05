@@ -350,6 +350,10 @@ content: url('../public/images/arrow_next.svg');
 
 @media (max-width:  768px) {
 
+  .slick-list {
+       padding-left: 15px !important;
+    }
+
     .no-mobile {
     display: none;
   }
