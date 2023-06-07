@@ -65,7 +65,7 @@ const ProjectPage = ({ project }: any) => {
 							)}
 							{Author && (
 								<div className={style.projectData__author}>
-									<p>{t("author")}</p> <h4>{Author}</h4>
+									<p>{t("designer")}</p> <h4>{Author}</h4>
 								</div>
 							)}
 						</div>

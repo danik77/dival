@@ -157,6 +157,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .projectData h4 {
+            margin-bottom: 24px;
+    }
+    
     .projectData__stats > div:not(:last-child) {
         margin-right: 24px;
     }
