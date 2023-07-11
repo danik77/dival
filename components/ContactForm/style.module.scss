@@ -21,8 +21,22 @@
 @media (min-width: 768px) {
   .contact__popup {
  max-height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
+
+
+
+.contact__popup::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.contact__popup {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 }
 
 .contact__cancelButton {
