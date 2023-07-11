@@ -21,19 +21,19 @@ const LangSwitcher = () => {
   const handleClick = (lang: string) => {
     setActive(lang);
     setShowSubmenu(false);
+    console.log(lang);
   };
 
   const openSubmenu = () => {
     setShowSubmenu(!showSubMenu);
   };
 
-  const closeSubmenu =() => {
-     setShowSubmenu(false);
-  }
+  const closeSubmenu = () => {
+    setShowSubmenu(false);
+  };
 
   return (
     <>
-          
       <div className={style.lang__switch}>
         <div className={style.active} onClick={openSubmenu}>
           <span style={{ marginRight: "13px" }}>
@@ -49,40 +49,43 @@ const LangSwitcher = () => {
 
         {showSubMenu && (
           <>
-          <div className={style.submenu}>
-            {langs.map((lang) => (
-              <div key={lang.langIndex} className={style.submenu__item}>
+            <div className={style.submenu}>
+              {langs.map((lang) => (
                 <Link
+                  key={lang.langIndex}
                   href={`/${lang.langIndex}${router.asPath}`}
                   locale={lang.langIndex}
                 >
-                  <a
-                    className={`${style.lang__item} ${
-                      active === lang.langIndex && style.lang__active
-                    }`}
+                  <div
+                    className={style.submenu__item}
                     onClick={() => handleClick(lang.langIndex)}
                   >
-                    {t(lang.langName)}
-                  </a>
-                </Link>
+                    <a
+                      className={`${style.lang__item} ${
+                        active === lang.langIndex && style.lang__active
+                      }`}
+                    >
+                      {t(lang.langName)}
+                    </a>
 
-                {active === lang.langIndex && (
-                  <Image
-                    src="/images/check.svg"
-                    alt="Check Mark"
-                    width={20}
-                    height={20}
-                    priority={true}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-            <div className={style.overlay} onClick={closeSubmenu}></div>  
-           </>
+                    {active === lang.langIndex && (
+                      <Image
+                        src="/images/check.svg"
+                        alt="Check Mark"
+                        width={20}
+                        height={20}
+                        priority={true}
+                      />
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className={style.overlay} onClick={closeSubmenu}></div>
+          </>
         )}
       </div>
-      </>
+    </>
   );
 };
 

@@ -31,9 +31,7 @@ const INITIAL_ERRORS = [
 	"name",
 	"email",
 	"phone",
-	"country",
-	"city",
-	"category",
+	"country"
 ];
 
 const ContactForm = (props: any) => {
@@ -47,7 +45,6 @@ const ContactForm = (props: any) => {
 
 	const [sending, setSending] = useState(false);
 	const [sent, setSent] = useState(false);
-	//const [formValid, setFormValid] = useState(false)
 
 	const [validationError, setValidationError] = useState([]);
 
@@ -58,15 +55,6 @@ const ContactForm = (props: any) => {
 	const [cities, setCities] = useState([]);
 
 	const categories = context.categories.data;
-
-	useEffect(() => {
-		/*
- const input = document.querySelector("#phone");
-intlTelInput(input, {
-    // any initialisation options go here
-});
-*/
-	}, []);
 
 	useEffect(() => {
 		fetch("https://countriesnow.space/api/v0.1/countries")
@@ -84,12 +72,6 @@ intlTelInput(input, {
 				setCountries(countriesOptions);
 			});
 
-		//	console.log(countriesData)
-
-		/*.then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-  */
 	}, []);
 
 	useEffect(() => {
@@ -200,7 +182,7 @@ intlTelInput(input, {
 			const key = item[0];
 			const val = item[1];
 
-			if (val === "" && key !== "email") {
+			if (val === "" && key !== "email" && key !== "city" && key !=="category") {
 				newValidationError.push(key);
 			}
 		});
@@ -236,8 +218,6 @@ intlTelInput(input, {
 				console.log(sendMail);
 			}
 
-			console.log("sendToDatabase");
-
 			//send db
 
 			fetch(process.env.NEXT_PUBLIC_DIVAL_BACKEND + "/orders", {
@@ -271,8 +251,6 @@ intlTelInput(input, {
 	const closePopup = () => {
 		props.closeForm && props.closeForm();
 	};
-
-	//const checkValid
 
 	return (
 		<>
@@ -390,7 +368,7 @@ intlTelInput(input, {
 								label="city"
 								options={cities}
 								value={formData.city}
-								placeholder={t("city") + "*"}
+								placeholder={t("city")}
 								onChange={changeSelectCities}
 							/>
 							<div
